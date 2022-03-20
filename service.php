@@ -62,4 +62,5 @@ $audioContent = $response->getAudioContent();
 file_put_contents('output.mp3', $audioContent);
 
 # [END tts_quickstart]
-return $audioContent;
+$data['status']='ok';
+echo json_encode($data);
