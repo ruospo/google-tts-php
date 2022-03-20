@@ -14,7 +14,7 @@
             dataType: 'json',
             type: 'post',
             contentType: 'application/x-www-form-urlencoded',
-            date: {text: $("#srcText").val(), language: $("#language").val()},
+            date: {testo: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
             success: function (data, textStatus, jQxhr) { console.log(data); $("#audioPlayer").attr("src", data); },
 
          data: { "select": $("#language option:selected").val() },
@@ -26,7 +26,6 @@
     </script>
     <p>
         <select id="language" style="width: 200px">
-            <option value="">------- Select language -------</option>
             <option value="ca-es">Catalan</option>
             <option value="zh-cn">Chinese (China)</option>
             <option value="zh-hk">Chinese (Hong Kong)</option>
@@ -42,7 +41,7 @@
             <option value="fr-ca">French (Canada)</option>
             <option value="fr-fr">French (France)</option>
             <option value="de-de">German</option>
-            <option value="it-it">Italian</option>
+            <option value="it-it" selected>Italian</option>
             <option value="ja-jp">Japanese</option>
             <option value="ko-kr">Korean</option>
             <option value="nb-no">Norwegian</option>
@@ -55,8 +54,15 @@
             <option value="sv-se">Swedish (Sweden)</option>
         </select>
     </p>
+    <p>
+        <select name="gender" id="gender">
+            <option value="FEMALE" selected>Donna</option>
+            <option value="MALE">Uomo</option>
 
-        <textarea id="srcText" cols="50" rows="10"></textarea><br/>
+        </select>
+    </p>
+
+        <textarea id="srcText" name="srcText" cols="50" rows="10"></textarea><br/>
             <input type="button" value="Speech" onclick="speechText();"/>
             <audio id="audioPlayer" src="" autoplay="autoplay"></audio>
 
