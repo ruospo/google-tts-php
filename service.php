@@ -32,13 +32,13 @@ $client = new TextToSpeechClient();
 
 // sets text to be synthesised
 $synthesisInputText = (new SynthesisInput())
-    ->setText('Ciao alessandro, che ne dici di questo audio? Nel nuovo programma imposti il testo, spingi un tasto e poi ti genera un mp3. Ti piace?');
+    ->setText('Ciao alessandro, che ne dici di questo audio? Nel nuovo programma, imposti il testo, spingi un tasto e poi ti genera un mp3. Ti piace?');
 
 // build the voice request, select the language code ("en-US") and the ssml
 // voice gender
 $voice = (new VoiceSelectionParams())
     ->setLanguageCode('it-IT');
-   // ->setSsmlGender(SsmlVoiceGender::FEMALE);
+    ->setSsmlGender(SsmlVoiceGender::FEMALE);
 
 // Effects profile
 $effectsProfileId = 'telephony-class-application';
@@ -55,7 +55,6 @@ $audioContent = $response->getAudioContent();
 
 // the response's audioContent is binary
 file_put_contents('output.mp3', $audioContent);
-echo 'Audio content written to "output.mp3"' . PHP_EOL;
 
 # [END tts_quickstart]
 return $audioContent;
