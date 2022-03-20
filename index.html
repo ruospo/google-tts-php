@@ -6,6 +6,9 @@
     <script type="text/javascript">
         function speechText() {
 
+            console.log($("#srcText").val());
+            console.log($("#language").val());
+            console.log($("#geneder").val());
 
 
             $.ajax({
@@ -14,7 +17,7 @@
             dataType: 'json',
             type: 'post',
             contentType: 'application/x-www-form-urlencoded',
-            date: {testo: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
+            data: {testo: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
             success: function (data, textStatus, jQxhr) { console.log(data); $("#audioPlayer").attr("src", data); },
 
          data: { "select": $("#language option:selected").val() },
@@ -63,7 +66,7 @@
     </p>
 
         <textarea id="srcText" name="srcText" cols="50" rows="10"></textarea><br/>
-            <input type="button" value="Speech" onclick="speechText();"/>
+            <span  value="Speech" onclick="speechText();"/>
             <audio id="audioPlayer" src="" autoplay="autoplay"></audio>
 
    </body>
