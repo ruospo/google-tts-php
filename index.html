@@ -8,7 +8,7 @@
 
             console.log($("#srcText").val());
             console.log($("#language").val());
-            console.log($("#geneder").val());
+            console.log($("#gender").val());
 
 
             $.ajax({
@@ -16,7 +16,6 @@
             async: true,
             dataType: 'json',
             type: 'post',
-            contentType: 'application/x-www-form-urlencoded',
             data: {testo: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
             success: function (data, textStatus, jQxhr) { console.log(data); $("#audioPlayer").attr("src", data); },
 
@@ -66,7 +65,7 @@
     </p>
 
         <textarea id="srcText" name="srcText" cols="50" rows="10"></textarea><br/>
-            <span  value="Speech" onclick="speechText();"/>
+            <span  value="speech" onclick="speechText();">INVIA</span>
             <audio id="audioPlayer" src="" autoplay="autoplay"></audio>
 
    </body>
