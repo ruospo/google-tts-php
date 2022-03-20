@@ -14,12 +14,11 @@
             type: 'post',
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             data: {language:$("#language option:selected").val(),text:$('#srcText').val(),gender:$("#gender option:selected").val()},
-            success: function (data, textStatus, jQxhr) {
-                 console.log(data); 
+            success: function (data) { 
                  $("#message").html('Download pronto');
                  $('#download').show();
                 },
-            error: function(jqXhr, textStatus, errorThrown) { console.log(errorThrown); }
+                error: function (jqXHR, textStatus, errorThrown) { console.log(errorThrown); }
         });
 
         }
