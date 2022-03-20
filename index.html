@@ -17,9 +17,8 @@
             success: function (data, textStatus, jQxhr) {
                  console.log(data); 
                  $("#message").html('Download pronto');
-                 $('#download').show();},
-
-
+                 $('#download').show();
+                },
             error: function(jqXhr, textStatus, errorThrown) { console.log(errorThrown); }
         });
 
@@ -65,7 +64,7 @@
     </p>
 
         <textarea id="srcText" name="text" cols="50" rows="10"></textarea><br/>
-            <button type="button"  value="speech" onclick="speechText();">INVIA</span>
+            <button type="button"  value="speech" onclick="speechText();">INVIA</button>
 
         <hr>
         <span id="message"></span>
