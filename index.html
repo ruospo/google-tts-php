@@ -6,14 +6,10 @@
     <script type="text/javascript">
         function speechText() {
 
-            console.log($("#srcText").val());
-            console.log($("#language").val());
-            console.log($("#gender").val());
 
 
             $.ajax({
             url: 'service.php',
-            async: true,
             dataType: 'json',
             type: 'post',
             data: {testo: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
