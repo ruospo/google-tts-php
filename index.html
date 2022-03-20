@@ -13,7 +13,7 @@
             dataType: 'json',
             type: 'post',
             contentType: 'application/json',
-            data: {testo: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
+            data: {text: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
             success: function (data, textStatus, jQxhr) {
                  console.log(data); 
                  $("#message").html('Download pronto');
