@@ -17,7 +17,10 @@
             dataType: 'json',
             type: 'post',
             data: {testo: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
-            success: function (data, textStatus, jQxhr) { console.log(data); $("#audioPlayer").attr("src", data); },
+            success: function (data, textStatus, jQxhr) {
+                 console.log(data); 
+                 $("#message").html('Download pronto');
+                 $('#download').show();},
 
          data: { "select": $("#language option:selected").val() },
 
@@ -25,6 +28,7 @@
         });
 
         }
+        
     </script>
     <p>
         <select id="language" style="width: 200px">
@@ -65,8 +69,10 @@
     </p>
 
         <textarea id="srcText" name="srcText" cols="50" rows="10"></textarea><br/>
-            <span  value="speech" onclick="speechText();">INVIA</span>
-            <audio id="audioPlayer" src="" autoplay="autoplay"></audio>
+            <button type="button"  value="speech" onclick="speechText();">INVIA</span>
 
+        <hr>
+        <span id="message"></span>
+        <a type="button" href="/output.mp3" hidden> Download</button>
    </body>
  </html>
