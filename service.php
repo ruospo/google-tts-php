@@ -37,7 +37,7 @@ $synthesisInputText = (new SynthesisInput())
 // build the voice request, select the language code ("en-US") and the ssml
 // voice gender
 $voice = (new VoiceSelectionParams())
-    ->setLanguageCode('it-IT');
+    ->setLanguageCode('it-IT')
     ->setSsmlGender(SsmlVoiceGender::FEMALE);
 
 // Effects profile
