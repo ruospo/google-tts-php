@@ -13,13 +13,12 @@
             dataType: 'json',
             type: 'post',
             contentType: 'application/json',
-            data: $(this).serialize(),
+            data: {language:$("#language option:selected").val(),text:$('#srcText').val(),gender:$("#gender option:selected").val()},
             success: function (data, textStatus, jQxhr) {
                  console.log(data); 
                  $("#message").html('Download pronto');
                  $('#download').show();},
 
-         data: { "select": $("#language option:selected").val() },
 
             error: function(jqXhr, textStatus, errorThrown) { console.log(errorThrown); }
         });
