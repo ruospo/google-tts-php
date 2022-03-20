@@ -36,10 +36,15 @@ $synthesisInputText = (new SynthesisInput())
 
 // build the voice request, select the language code ("en-US") and the ssml
 // voice gender
+if($_POST['gender']=='FEMALE'){
 $voice = (new VoiceSelectionParams())
     ->setLanguageCode($_POST['language'])
-    ->setSsmlGender(SsmlVoiceGender::$_POST['gender']);
-
+    ->setSsmlGender(SsmlVoiceGender::FEMALE);
+}else{
+    $voice = (new VoiceSelectionParams())
+    ->setLanguageCode($_POST['language'])
+    ->setSsmlGender(SsmlVoiceGender::MALE);
+}
 // Effects profile
 $effectsProfileId = 'telephony-class-application';
 
