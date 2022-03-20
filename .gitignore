@@ -1,0 +1,9 @@
+vendor/*
+credential.json
+output.mp3
+src/*
+resources/*
+test/*
+composer.lock
+phpunit.xml.dist
+
