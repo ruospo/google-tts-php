@@ -12,6 +12,7 @@
             url: 'service.php',
             dataType: 'json',
             type: 'post',
+            contentType: 'application/json',
             data: {testo: $("#srcText").val(), language: $("#language").val(),gender:$('#geneder').val()},
             success: function (data, textStatus, jQxhr) {
                  console.log(data); 
